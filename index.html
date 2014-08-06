@@ -35,6 +35,7 @@ function recievedMessage(peer) {
     node.data.color = "blue";
     setTimeout(function() {
       node.data.color = "red";
+      sys.renderer.redraw();
     }, 300);
   }
 }
@@ -44,8 +45,10 @@ function sentMessage(peer) {
   if (node) {
     console.log(node);
     node.data.color = "green";
+    sys.renderer.redraw();
     setTimeout(function() {
       node.data.color = "red";
+      sys.renderer.redraw();
     }, 300);
   }
 }
