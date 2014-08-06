@@ -29,6 +29,8 @@ function removeEdge(peer1, peer2) {
 }
 
 function recievedMessage(peer) {
+  var dino = sys.getNode(peer);
+  console.log(dino);
   sys.getNode(peer).data.color = "blue";
   setInterval(function() {
     sys.getNode(peer).data.color = "red";
