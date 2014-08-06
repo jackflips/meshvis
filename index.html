@@ -28,7 +28,7 @@ function removeEdge(peer1, peer2) {
   });
   sys.getEdges(peer2, peer1).prune(function() {
     return true;
-  }
+  });
 }
 
 function recievedMessage(peer) {
