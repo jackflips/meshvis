@@ -48,6 +48,7 @@ var socket = io();
   socket.on('protest-data', function (data) {
     console.log(data);
     if (data.event == "connected") {
+      console.log(data.event);
       addConnection(data.peer, data.connectedpeer);
     } else if (data.event == "disconnected") {
       removeEdge(data.peer, data.connectedpeer);
