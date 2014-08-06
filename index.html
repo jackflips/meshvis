@@ -5,6 +5,9 @@
 <script src="graphics.js"></script>
 <script src="renderer.js"></script>
 <script src="/socket.io/socket.io.js"></script>
+</head>
+<body>
+<canvas id="viewport" width="800" height="600"></canvas>
 <script>
 var graph = new Springy.Graph();
 var currentEdges = {};
@@ -23,7 +26,7 @@ function removeEdge(peer1, peer2) {
   sys.getEdges(peer1, peer2).prune(function() {
     return true;
   });
-  sys.getEdges(peer2, peer1).prune(function()) {
+  sys.getEdges(peer2, peer1).prune(function() {
     return true;
   }
 }
@@ -56,19 +59,9 @@ var socket = io();
     }
   });
 
-
-
-</script>
-<canvas id="viewport" width="800" height="600"></canvas>
-<script>
   var sys = arbor.ParticleSystem(1000, 400,1);
   sys.parameters({gravity:true});
   sys.renderer = Renderer("#viewport") ;
-  var animals = sys.addNode('Animals',{'color':'red','shape':'dot','label':'Animals'});
-  var hello = sys.addNode('Geese', {'color': 'blue', 'shape': 'dot', 'label': 'ha'});
-  var e = sys.addEdge(animals, hello);
-
-
 </script>
 </body>
 </html>
