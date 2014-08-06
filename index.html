@@ -33,6 +33,7 @@ function recievedMessage(peer) {
   if (node) {
     console.log(node);
     node.data.color = "blue";
+    sys.renderer.redraw();
     setTimeout(function() {
       node.data.color = "red";
       sys.renderer.redraw();
