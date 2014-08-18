@@ -39,7 +39,7 @@ $(function() {
       edges.splice(i, 1);
     }
     var edgesFrom = sys.getEdges(peer2, peer1);
-    for (edge in edgesTo) {
+    for (edge in edgesFrom) {
       sys.pruneEdge(edgesFrom[edge]);
       var i = edges.indexOf(edgesFrom[edge]);
       edges.splice(i, 1);
