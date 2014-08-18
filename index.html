@@ -105,7 +105,7 @@ socket.on('protest-data', function (data) {
   if (data.connectedpeer) {
     $(".log-list").append('<li><p>event: ' + data.event + ', peer: ' + data.peer + ', other peer: ' + data.connectedpeer + '</p></li>');
   } else {
-    $(".log-list").append('<li><p>event: ' + data.event + ', peer: ' + data.peer '</p></li>');
+    $(".log-list").append('<li><p>event: ' + data.event + ', peer: ' + data.peer + '</p></li>');
   }
 
 });
