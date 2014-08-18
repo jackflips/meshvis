@@ -91,6 +91,8 @@ $(function() {
 
 var socket = io();
 socket.on('protest-data', function (data) {
+  if (data.peer) data.peer = data.peer.substr(data.peer.length - 4);
+  if (data.connectedpeer) data.connectedpeer = data.peer.substr(data.connectedpeer.length - 4);
   console.log(data);
   if (data.event == "connected") {
     console.log(data.event);
