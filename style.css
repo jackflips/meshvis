@@ -16,7 +16,7 @@
 
 .log {
 	float: left;
-	height: 600px;
+	height: 100%;
 	width: 35%;
 }
 
@@ -26,4 +26,10 @@
 body {
     margin: 0;
     text-align: center;
+}
+
+.log-list: {
+	margin-top: 0px;
+	margin-bottom: 0px;
+	overflow: auto;
 }
