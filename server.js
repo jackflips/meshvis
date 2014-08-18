@@ -19,6 +19,14 @@ app.get('/graphics.js', function(req, res) {
   res.sendfile('graphics.js');
 });
 
+app.get('/style.css', function(req, res) {
+  res.sendfile('style.css');
+});
+
+app.get('/header.png', function(req, res) {
+  res.sendfile('header.png');
+});
+
 io.on('connection', function(socket){
   console.log('a user connected');
 });

@@ -1,0 +1,29 @@
+.topbar {
+	top:0px;
+	background-image: url("header.png");
+	width:100%;
+	height: 54px;
+}
+
+.topbar h1 {
+	font-family: Palatino;
+	font-size: 18px;
+	color: white;
+	float: left;
+	margin-left: 15px;
+	margin-top: 17px;
+}
+
+.log {
+	float: left;
+	height: 600px;
+	width: 35%;
+}
+
+#viewport {
+}
+
+body {
+    margin: 0;
+    text-align: center;
+}
