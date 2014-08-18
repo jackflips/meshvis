@@ -101,6 +101,7 @@ socket.on('protest-data', function (data) {
     removeEdge(data.peer, data.connectedpeer);
   } else if (data.event == "recieved-message") {
     sentMessage(data.peer);
+    return;
   } else if (data.event == "sent-message") {
     recievedMessage(data.peer);
     return;
