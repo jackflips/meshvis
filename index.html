@@ -92,7 +92,7 @@ $(function() {
 var socket = io();
 socket.on('protest-data', function (data) {
   if (data.peer) data.peer = data.peer.substr(data.peer.length - 4);
-  if (data.connectedpeer) data.connectedpeer = data.peer.substr(data.connectedpeer.length - 4);
+  if (data.connectedpeer) data.connectedpeer = data.connectedpeer.substr(data.connectedpeer.length - 4);
   console.log(data);
   if (data.event == "connected") {
     console.log(data.event);
@@ -103,6 +103,7 @@ socket.on('protest-data', function (data) {
     sentMessage(data.peer);
   } else if (data.event == "sent-message") {
     recievedMessage(data.peer);
+    return;
   }
   if (data.connectedpeer) {
     $(".log-list").append('<li><p>event: ' + data.event + ', peer: ' + data.peer + ', other peer: ' + data.connectedpeer + '</p></li>');
