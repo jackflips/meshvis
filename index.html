@@ -21,10 +21,6 @@ $(function() {
   var nodes = [];
   var edges = [];
 
-  function randomHex() {
-    return '#'+Math.floor(Math.random()*16777215).toString(16);
-  }
-
   function addConnection(peer1, peer2) {
     if (!sys.getNode(peer1)) {
       nodes.push(sys.addNode(peer1,{'color':'red','shape':'dot','label':peer1}));
@@ -106,7 +102,11 @@ socket.on('protest-data', function (data) {
   } else if (data.event == "sent-message") {
     recievedMessage(data.peer);
   }
-  $(".log-list").append('<li><p>' + data + '</p></li>');
+  if (data.connectedpeer) {
+    $(".log-list").append('<li><p>event: ' + data.event + ', peer: ' + data.peer + ', other peer: ' + data.connectedpeer + '</p></li>');
+  } else {
+    $(".log-list").append('<li><p>event: ' + data.event + ', peer: ' + data.peer '</p></li>');
+  }
 
 });
 
